@@ -1,0 +1,22 @@
+#demo-customized-button{
+ color: #3699FF;
+ background-color: #E1F0FF;
+ border-color: transparent;
+
+}
+#demo-customized-button:hover{
+background-color: #3699FF;
+color: #FFFFFF;
+}
+
+.text-blue {
+ color:  #3699FF !important;
+}
+.MuiMenuItem-root:hover{
+ color: #3699FF !important;
+ 
+}
+.MuiMenuItem-root:hover svg{
+ color: #3699FF !important;
+ 
+}

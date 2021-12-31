@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { styled, alpha } from '@mui/material/styles';
 import Button from '@mui/material/Button';
 import Menu, { MenuProps } from '@mui/material/Menu';
@@ -9,6 +9,7 @@ import SeventeenMpOutlinedIcon from '@mui/icons-material/SeventeenMpOutlined';
 import MailOutlineOutlinedIcon from '@mui/icons-material/MailOutlineOutlined';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import ArticleOutlinedIcon from '@mui/icons-material/ArticleOutlined';
+import "./dropdown.css";
 
 const StyledMenu = styled((props: MenuProps) => (
   <Menu
@@ -52,37 +53,22 @@ const StyledMenu = styled((props: MenuProps) => (
 }));
 
  function CustomizedMenus() {
-  const [hoverbtn,sethoverbtn]=useState(false);
+
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
-    sethoverbtn(!hoverbtn)
+    
   };
   const handleClose = () => {
     setAnchorEl(null);
   };
 
-  const Mystyle={
-   color: "#3699FF",
-    backgroundColor: "#E1F0FF",
-    borderColor: "transparent",
- 
-  }
-  const toggleMouse= () => {
-   sethoverbtn(!hoverbtn)
-  } 
-  if(hoverbtn){
-   Mystyle.backgroundColor ="#3699FF";
-   Mystyle.color= "#FFFFFF";
-  }
 
   return (
     <div>
       <Button 
-        style={Mystyle}
-        onMouseEnter={toggleMouse}
-        onMouseLeave={toggleMouse}
+     
         id="demo-customized-button"
         aria-controls={open ? 'demo-customized-menu' : undefined}
         aria-haspopup="true"
@@ -103,6 +89,9 @@ const StyledMenu = styled((props: MenuProps) => (
         open={open}
         onClose={handleClose}
       >
+         <MenuItem onClick={handleClose} disableRipple className='text-blue'>
+          Add New:
+        </MenuItem>
         <MenuItem onClick={handleClose} disableRipple>
           <ShoppingCartOutlinedIcon />
           order

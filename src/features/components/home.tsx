@@ -5,7 +5,7 @@ import { ReactElement } from "react";
 import { DKCardBody, DKCardFooter } from "src/core/components/card";
 import { DKCard } from "src/core/components/card/card";
 import { DKCardHeader } from "src/core/components/card/card-header";
-import CustomizedMenus from "./dropdown";
+import CustomizedMenus from "./dropDown/dropdown";
 
 
 
