@@ -9,7 +9,7 @@ import SeventeenMpOutlinedIcon from '@mui/icons-material/SeventeenMpOutlined';
 import MailOutlineOutlinedIcon from '@mui/icons-material/MailOutlineOutlined';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import ArticleOutlinedIcon from '@mui/icons-material/ArticleOutlined';
-import "./dropdown.css";
+import "./../Home.css";
 
 const StyledMenu = styled((props: MenuProps) => (
   <Menu

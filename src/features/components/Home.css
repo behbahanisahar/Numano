@@ -1,3 +1,4 @@
+/* dropDown.tsx */
 #demo-customized-button{
  color: #3699FF;
  background-color: #E1F0FF;
@@ -12,11 +13,23 @@ color: #FFFFFF;
 .text-blue {
  color:  #3699FF !important;
 }
+
 .MuiMenuItem-root:hover{
  color: #3699FF !important;
+ background-color: #F3F6F9;
  
 }
 .MuiMenuItem-root:hover svg{
  color: #3699FF !important;
  
+}
+/* dropDown.tsx */
+/* Home.tsx */
+.text-hover:hover{
+ color:  #3699FF !important;
+ cursor: pointer;
+}
+
+.MuiTableCell-root{
+ border-bottom:none !important;
 }
