@@ -35,7 +35,7 @@ color: #FFFFFF;
  border-bottom:none !important;
 }
 
-.MuiSvgIcon-root{
+.symbol-label>svg{
  height: 2rem !important;
  width: 2rem !important;
 }
@@ -63,6 +63,9 @@ color: #FFFFFF;
 }
 .symbol-label-fifth{
  background-color: #E1F0FF;
+}
+.container{
+ direction: ltr;
 }
 
 
