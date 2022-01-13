@@ -93,6 +93,7 @@ const uploadFolderToSP = async (sourceGlob: string, targetBasePath: string, envi
     "asset-manifest",
     "woff",
     "eot",
+   
     "ttf",
     "gif",
     "jpg",
