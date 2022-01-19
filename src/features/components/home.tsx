@@ -1,42 +1,29 @@
-import * as React from 'react';
-import { styled } from '@mui/material/styles';
-import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
-import Grid from '@mui/material/Grid';
-import BasicTable from './Table';
-import SwitchListSecondary from './switch';
-import CustomizedList from './FireBash';
-import CardRam from './Card';
-import CustomizedAccordions from './accordian';
+import * as React from "react";
+import { ReactElement } from "react";
+import { DKCardBody } from "src/core/components/card";
+import { DKCard } from "src/core/components/card/card";
+import { DKCardHeader } from "src/core/components/card/card-header";
+import DKSVGIcon from "src/core/components/svg-icon/svg-icon";
+import HeaderContent from "./header-content/header-content";
+import "./Home.css";
+import TableSamira from "./table/table";
 
-const Item = styled(Paper)(({ theme }) => ({
-  ...theme.typography.body2,
-  padding: theme.spacing(1),
-  textAlign: 'center',
-  color: theme.palette.text.secondary,
-}));
 
-export default function BasicGrid() {
+const Home = (): ReactElement => {
   return (
-    <><Box sx={{ flexGrow: 1 }}>
-      <Grid container spacing={2}>
-        <Grid item xs={2.75}>
-          <Item><CustomizedList></CustomizedList></Item>
-        </Grid>
-        <Grid item xs={2.75}>
-          <Item><SwitchListSecondary></SwitchListSecondary></Item>
-        </Grid>
-        <Grid item xs={6.5}>
-          <Item><BasicTable></BasicTable></Item>
-        </Grid>
-        <Grid item xs={8}>
-          <Item><CardRam></CardRam></Item>
-        </Grid>
-        <Grid item xs={4}>
-          <Item><CustomizedAccordions></CustomizedAccordions></Item>
-        </Grid>
+    <>
+      <DKCard>
+        <DKCardHeader hasComplexHeader={true} noBorder={true} className={"p-5 ltr"}>
+          <HeaderContent title="Files" subTitle="More than 400+ new members" />
+        </DKCardHeader>
+        <DKCardBody>
+          <TableSamira />
+          <DKSVGIcon color="success" size="md" iconName="Clipboard"/>
+        </DKCardBody>
+      </DKCard>
       
-      </Grid>
-    </Box></>
+    </>
   );
-}
+};
+
+export default Home;
