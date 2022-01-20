@@ -9,4 +9,5 @@ const Home = (): ReactElement => {
     </>
   );
 };
+
 export default Home;
