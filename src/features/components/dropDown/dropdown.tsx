@@ -16,13 +16,13 @@ const CustomizedMenus = (): ReactElement => {
   };
   const getDropDownValues = async (): Promise<void> => {
     const values = await spRestService.getDropDownValues();
-    console.log(values);
+   
     setDropdownValues(values);
   };
 
   useEffect(() => {
     getDropDownValues();
-    console.log(dropdownValues);
+    
   }, []);
   const renderDropDown = (): React.ReactNode => {
     return dropdownValues.map((item: DropDownModel) => {

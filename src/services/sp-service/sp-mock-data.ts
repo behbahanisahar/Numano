@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/camelcase */
 
 import DropDownModel from "src/entities/drop-down";
+import MyTableModel from "src/entities/MyTables";
 import SettingItem from "src/entities/setting-item";
 import UserInfo from "src/entities/userinfo";
 
@@ -50,5 +51,32 @@ export default class MockData {
       text: "test3",
       key: "3",
     },
+  ];
+  public static MyTableValues: MyTableModel[] = [
+    {
+      key: 1,
+      name:"test1",
+      course:"computer",
+      Member:"12",
+      size:"12",
+
+    },
+    {
+      key: 2,
+      name:"test2",
+      course:"Math",
+      Member:"13",
+      size:"13",
+
+    },
+    {
+      key: 3,
+      name:"test3",
+      course:"Art",
+      Member:"14",
+      size:"14",
+
+    },
+    
   ];
 }

@@ -1,5 +1,6 @@
 import { sp } from "@pnp/sp";
 import DropDownModel from "src/entities/drop-down";
+import MyTablesModel from "src/entities/MyTables";
 import SPLists from "src/entities/lists";
 import MockData from "./sp-mock-data";
 
@@ -44,6 +45,29 @@ export default class SPRestService {
     }
       return Promise.resolve(MockData.dropDownValues);
    // return Promise.resolve([]);
+  }
+
+  //
+
+  /*********************************************************************************** */
+  public async getMyTableValues(): Promise<MyTablesModel[]> {
+    if (process.env.NODE_ENV === "production") {
+      const listData: any = await sp.web.lists
+        .getByTitle(SPLists.DropDownValues)
+        .items.top(1000)
+        .get();
+
+      const data = listData.map((c: any) => {
+        return {
+          key: c.Id,
+          text: c.Title,
+        };
+      });
+
+      return Promise.resolve(data);
+    }
+      return Promise.resolve(MockData.MyTableValues);
+    // return Promise.resolve([]);
   }
 
   //
