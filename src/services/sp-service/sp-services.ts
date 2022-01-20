@@ -1,5 +1,7 @@
-import { sp, Web } from "@pnp/sp";
+import { sp } from "@pnp/sp";
+import DropDownModel from "src/entities/drop-down";
 import SPLists from "src/entities/lists";
+import MockData from "./sp-mock-data";
 
 export default class SPRestService {
   public constructor() {
@@ -24,26 +26,24 @@ export default class SPRestService {
     }
   }
   /*********************************************************************************** */
-  public async getBpDepartments(userId: number): Promise<any[]> {
+  public async getDropDownValues(): Promise<DropDownModel[]> {
     if (process.env.NODE_ENV === "production") {
-      const web = new Web("https://aura.digikala.com/hris/");
-      const listData: any = await web.lists
-        .getByTitle(SPLists.BusinessPartners)
-        .items.filter(`UserInfoId eq ${userId}`)
-        .top(1000)
+      const listData: any = await sp.web.lists
+        .getByTitle(SPLists.DropDownValues)
+        .items.top(1000)
         .get();
 
       const data = listData.map((c: any) => {
         return {
-          key: c.Level1Department,
-          text: c.Level1Department,
+          key: c.Id,
+          text: c.Title,
         };
       });
 
       return Promise.resolve(data);
     }
-    // return Promise.resolve(MockData.bpDepartments);
-    return Promise.resolve([]);
+      return Promise.resolve(MockData.dropDownValues);
+   // return Promise.resolve([]);
   }
 
   //

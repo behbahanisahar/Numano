@@ -1,24 +1,41 @@
-import ArticleOutlinedIcon from '@mui/icons-material/ArticleOutlined';
-import AssessmentOutlinedIcon from '@mui/icons-material/AssessmentOutlined';
-import MailOutlineOutlinedIcon from '@mui/icons-material/MailOutlineOutlined';
-import SeventeenMpOutlinedIcon from '@mui/icons-material/SeventeenMpOutlined';
-import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
-import FormControl from '@material-ui/core/FormControl';
-import InputLabel from '@material-ui/core/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import Select from '@material-ui/core/Select';
-import React from 'react';
+import FormControl from "@material-ui/core/FormControl";
+import InputLabel from "@material-ui/core/InputLabel";
+import Select from "@material-ui/core/Select";
+import MenuItem from "@mui/material/MenuItem";
+import React, { ReactElement, useEffect, useState } from "react";
+import DropDownModel from "src/entities/drop-down";
+import SPRestService from "src/services/sp-service/sp-services";
 import "./dropdown.css";
 
-
-function CustomizedMenus() {
-  const [create, setcreate] = React.useState('');
-  const handleChange = (event: React.ChangeEvent<{ value: unknown }>) => {
+const CustomizedMenus = (): ReactElement => {
+  const [create, setcreate] = React.useState("");
+  const [dropdownValues, setDropdownValues] = useState<DropDownModel[]>([]);
+  const spRestService = new SPRestService();
+  const handleChange = (event: React.ChangeEvent<{ value: unknown }>): any => {
     setcreate(event.target.value as string);
+  };
+  const getDropDownValues = async (): Promise<void> => {
+    const values = await spRestService.getDropDownValues();
+    console.log(values);
+    setDropdownValues(values);
+  };
+
+  useEffect(() => {
+    getDropDownValues();
+    console.log(dropdownValues);
+  }, []);
+  const renderDropDown = (): React.ReactNode => {
+    return dropdownValues.map((item: DropDownModel) => {
+      return (
+        <MenuItem value={item.text} key={item.key}>
+          {item.text === "test" ? <span className="text-primary">{item.text}</span> : item.text}
+        </MenuItem>
+      );
+    });
   };
   return (
     <div>
-      <FormControl >
+      <FormControl>
         <InputLabel id="demo-customized-select-label">create</InputLabel>
         <Select
           labelId="demo-customized-select-label"
@@ -26,18 +43,10 @@ function CustomizedMenus() {
           onChange={handleChange}
           value={create}
         >
-          <MenuItem value="">
-          </MenuItem>
-          <MenuItem value={10}> Add New:</MenuItem>
-          <MenuItem value={20}><ShoppingCartOutlinedIcon />order</MenuItem>
-          <MenuItem value={40}><SeventeenMpOutlinedIcon />Event</MenuItem>
-          <MenuItem value={50}><AssessmentOutlinedIcon />Report</MenuItem>
-          <MenuItem value={50}><MailOutlineOutlinedIcon />post</MenuItem>
-          <MenuItem value={50}>< ArticleOutlinedIcon />File</MenuItem>
+          {renderDropDown()}
         </Select>
       </FormControl>
-    
     </div>
   );
-}
+};
 export default CustomizedMenus;

@@ -11,6 +11,7 @@ enum SPLists {
   DepartmentSoftSkill = "TNA_Dep_soft_Skills",
   TNAFeedbacks = "TNA_Feedbacks",
   FAQ = "FAQ",
+  DropDownValues = "DropDownValues",
   /** ***************hr forms*********************/
   HRTasks = "D58C1440-484E-41E0-9127-260DDCD08498",
   BirthdayLoan = "1c9a3d83-7099-4407-b80d-eac185d8d6cb", // hedye tavalod farzand

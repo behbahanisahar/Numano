@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/camelcase */
 
+import DropDownModel from "src/entities/drop-down";
 import SettingItem from "src/entities/setting-item";
 import UserInfo from "src/entities/userinfo";
 
@@ -36,4 +37,18 @@ export default class MockData {
     iconUrl: "https://aura.digikala.com/hris/joy-site/PublishingImages/gifts/gift.gif",
     imageUrl: "https://aura.digikala.com/hris/joy-site/PublishingImages/gifts/gift.png",
   };
+  public static dropDownValues: DropDownModel[] = [
+    {
+      text: "test",
+      key: "1",
+    },
+    {
+      text: "test",
+      key: "2",
+    },
+    {
+      text: "test3",
+      key: "3",
+    },
+  ];
 }
