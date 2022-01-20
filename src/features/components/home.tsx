@@ -3,7 +3,7 @@ import { ReactElement } from "react";
 import { DKCardBody } from "src/core/components/card";
 import { DKCard } from "src/core/components/card/card";
 import { DKCardHeader } from "src/core/components/card/card-header";
-import DKSVGIcon from "src/core/components/svg-icon/svg-icon";
+// import DKSVGIcon from "src/core/components/svg-icon/svg-icon";
 import HeaderContent from "./header-content/header-content";
 import "./Home.css";
 import TableSamira from "./table/table";
@@ -17,7 +17,7 @@ const Home = (): ReactElement => {
         </DKCardHeader>
         <DKCardBody>
           <TableSamira />
-          <DKSVGIcon color="success" size="md" iconName="Clipboard"/>
+          {/* <DKSVGIcon color="success" size="md" iconName="Clipboard"/> */}
         </DKCardBody>
       </DKCard>
     </>

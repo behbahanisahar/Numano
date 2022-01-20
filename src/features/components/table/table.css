@@ -1,0 +1,71 @@
+.symbol{
+ display: inline-block;
+ flex-shrink: 0;
+ position: relative;
+ border-radius: 0.42rem;
+}
+
+.first td .symbol-label{
+ background-color: #C9F7F5;
+ color: #1BC5BD;
+}
+
+.second td .symbol-label{
+ background-color: #FFE2E5;
+ color: #F64E60;
+}
+
+.third td .symbol-label{
+ background-color: #EEE5FF;
+ color: #8950FC;
+}
+
+.fourth td .symbol-label{
+ background-color: #FFF4DE;
+ color: #FFA800;
+}
+
+.fifth td .symbol-label{
+ background-color: #E1F0FF;
+ color: #3699FF;
+}
+
+.text-hover:hover{
+ color:  #3699FF !important;
+ cursor: pointer;
+}
+
+.MuiTableCell-root{
+ border-bottom:none !important;
+}
+
+.symbol-label>svg{
+ height: 2rem !important;
+ width: 2rem !important;
+}
+.symbol-label{
+   width: 45px;
+   height: 45px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-weight: bolder;
+   border-radius: 5px;
+}
+
+.symbol-label-First{
+ background-color: #C9F7F5;
+}
+.symbol-label-second{
+ background-color: #FFE2E5;
+}
+.symbol-label-third{
+ background-color: #EEE5FF;
+}
+.symbol-label-Forth{
+ background-color: #FFF4DE;
+}
+.symbol-label-fifth{
+ background-color: #E1F0FF;
+}
+
