@@ -37,7 +37,7 @@ const TableSamira = (): ReactElement => {
     return MyTableValues.map((item: MyTableModel) => {
       return (
         
-        <TableRow key={item.key} className={item.name}>
+        <TableRow key={item.key} className={item.key}>
           <TableCell >
             <div className="symbol">
               <span className="symbol-label">

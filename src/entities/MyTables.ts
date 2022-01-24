@@ -1,5 +1,6 @@
 export default interface MyTableModel {
- key: number;
+ 
+ key: string;
  name:string;
  course:string;
  Member:string;

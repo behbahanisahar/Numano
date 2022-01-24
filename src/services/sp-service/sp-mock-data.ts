@@ -4,6 +4,7 @@ import DropDownModel from "src/entities/drop-down";
 import MyTableModel from "src/entities/MyTables";
 import SettingItem from "src/entities/setting-item";
 import UserInfo from "src/entities/userinfo";
+// import DKSVGIcon from "src/core/components/svg-icon/svg-icon";
 
 export default class MockData {
   public static UserInfo: UserInfo = {
@@ -54,7 +55,8 @@ export default class MockData {
   ];
   public static MyTableValues: MyTableModel[] = [
     {
-      key: 1,
+      
+      key: "first",
       name:"test1",
       course:"computer",
       Member:"12",
@@ -62,7 +64,7 @@ export default class MockData {
 
     },
     {
-      key: 2,
+      key: "Second",
       name:"test2",
       course:"Math",
       Member:"13",
@@ -70,7 +72,7 @@ export default class MockData {
 
     },
     {
-      key: 3,
+      key: "third",
       name:"test3",
       course:"Art",
       Member:"14",
