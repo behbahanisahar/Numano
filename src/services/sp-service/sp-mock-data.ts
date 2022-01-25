@@ -58,7 +58,7 @@ export default class MockData {
       
       key: "first",
       name:"test1",
-      course:"computer",
+      Course:"computer",
       Member:"12",
       size:"12",
 
@@ -66,7 +66,7 @@ export default class MockData {
     {
       key: "Second",
       name:"test2",
-      course:"Math",
+      Course:"Math",
       Member:"13",
       size:"13",
 
@@ -74,7 +74,7 @@ export default class MockData {
     {
       key: "third",
       name:"test3",
-      course:"Art",
+      Course:"Art",
       Member:"14",
       size:"14",
 

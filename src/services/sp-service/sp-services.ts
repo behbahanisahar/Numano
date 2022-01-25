@@ -44,7 +44,7 @@ export default class SPRestService {
       return Promise.resolve(data);
     }
       return Promise.resolve(MockData.dropDownValues);
-   // return Promise.resolve([]);
+    // return Promise.resolve([]);
   }
 
   //
@@ -53,21 +53,25 @@ export default class SPRestService {
   public async getMyTableValues(): Promise<MyTablesModel[]> {
     if (process.env.NODE_ENV === "production") {
       const listData: any = await sp.web.lists
-        .getByTitle(SPLists.DropDownValues)
+        .getByTitle(SPLists.tablesamira)
         .items.top(1000)
         .get();
 
       const data = listData.map((c: any) => {
         return {
           key: c.Id,
-          text: c.Title,
+          name: c.Title,
+          Course: c.Course,
+          Member: c.Member,
+          size: c.size
+
         };
       });
 
       return Promise.resolve(data);
     }
-      return Promise.resolve(MockData.MyTableValues);
-    // return Promise.resolve([]);
+      //  return Promise.resolve(MockData.MyTableValues);
+    return Promise.resolve([]);
   }
 
   //

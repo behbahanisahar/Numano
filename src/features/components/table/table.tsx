@@ -46,7 +46,7 @@ const TableSamira = (): ReactElement => {
             </div>
           </TableCell>
           <TableCell className="text-hover text-dark font-weight-bolder mb-1 font-size-lg">{item.name}</TableCell>
-          <TableCell className="text-muted font-weight-bold">{item.course}</TableCell>
+          <TableCell className="text-muted font-weight-bold">{item.Course}</TableCell>
           <TableCell className="text-muted font-weight-bold">{item.Member}</TableCell>
           <TableCell className="text-hover text-dark font-weight-bolder mb-1 font-size-lg">{item.size}</TableCell>
         </TableRow>
