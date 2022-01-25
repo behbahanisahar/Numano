@@ -50,7 +50,7 @@ export default class SPRestService {
   //
 
   /*********************************************************************************** */
-  public async getMyTableValues(): Promise<MyTablesModel[]> {
+  public async GetMyTableValues(): Promise<MyTablesModel[]> {
     if (process.env.NODE_ENV === "production") {
       const listData: any = await sp.web.lists
         .getByTitle(SPLists.tablesamira)
@@ -63,7 +63,8 @@ export default class SPRestService {
           name: c.Title,
           Course: c.Course,
           Member: c.Member,
-          size: c.size
+          size: c.size,
+          iconName:c.iconName
 
         };
       });

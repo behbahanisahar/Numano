@@ -55,7 +55,7 @@ export default class MockData {
   ];
   public static MyTableValues: MyTableModel[] = [
     {
-      
+      iconName:"Cart3",
       key: "first",
       name:"test1",
       Course:"computer",
@@ -64,6 +64,7 @@ export default class MockData {
 
     },
     {
+      iconName:"blocks",
       key: "Second",
       name:"test2",
       Course:"Math",
@@ -72,6 +73,7 @@ export default class MockData {
 
     },
     {
+      iconName:"Group",
       key: "third",
       name:"test3",
       Course:"Art",

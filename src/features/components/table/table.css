@@ -5,27 +5,27 @@
  border-radius: 0.42rem;
 }
 
-.first td .symbol-label{
+.Cart3 td .symbol-label{
  background-color: #C9F7F5;
  color: #1BC5BD;
 }
 
-.second td .symbol-label{
+.blocks td .symbol-label{
  background-color: #FFE2E5;
  color: #F64E60;
 }
 
-.third td .symbol-label{
+.Group td .symbol-label{
  background-color: #EEE5FF;
  color: #8950FC;
 }
 
-.fourth td .symbol-label{
+.Library td .symbol-label{
  background-color: #FFF4DE;
  color: #FFA800;
 }
 
-.fifth td .symbol-label{
+.Box2 td .symbol-label{
  background-color: #E1F0FF;
  color: #3699FF;
 }
