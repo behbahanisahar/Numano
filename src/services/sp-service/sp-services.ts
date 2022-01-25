@@ -70,8 +70,8 @@ export default class SPRestService {
 
       return Promise.resolve(data);
     }
-      //  return Promise.resolve(MockData.MyTableValues);
-    return Promise.resolve([]);
+       return Promise.resolve(MockData.MyTableValues);
+    // return Promise.resolve([]);
   }
 
   //
