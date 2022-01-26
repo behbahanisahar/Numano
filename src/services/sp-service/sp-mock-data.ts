@@ -3,6 +3,7 @@
 import DropDownModel from "src/entities/drop-down";
 import SettingItem from "src/entities/setting-item";
 import UserInfo from "src/entities/userinfo";
+import TblMehdiModel from "src/entities/Tbl-Mehdi";
 
 export default class MockData {
   public static UserInfo: UserInfo = {
@@ -50,5 +51,27 @@ export default class MockData {
       text: "test3",
       key: "3",
     },
+  ];
+  public static TblMehdiValues: TblMehdiModel[] = [
+    {
+      Icon:"Cart3",
+      key: "first",
+      Name:"test1",
+      Course:"computer",
+      Member:"12",
+      Size:"12",
+
+    },
+    {
+      Icon:"blocks",
+      key: "Second",
+      Name:"test2",
+      Course:"Math",
+      Member:"13",
+      Size:"13",
+
+    },
+  
+    
   ];
 }

@@ -2,6 +2,7 @@ import { sp } from "@pnp/sp";
 import DropDownModel from "src/entities/drop-down";
 import SPLists from "src/entities/lists";
 import MockData from "./sp-mock-data";
+import TblMehdiModel from "src/entities/Tbl-Mehdi";
 
 export default class SPRestService {
   public constructor() {
@@ -44,6 +45,32 @@ export default class SPRestService {
     }
       return Promise.resolve(MockData.dropDownValues);
    // return Promise.resolve([]);
+  }
+
+  //
+  /*********************************************************************************** */
+  public async getTblMehdiValues(): Promise<TblMehdiModel[]> {
+    if (process.env.NODE_ENV === "production") {
+      const listData: any = await sp.web.lists
+        .getByTitle(SPLists.MehdiTb)
+        .items.top(1000)
+        .get();
+
+      const data = listData.map((c: any) => {
+        return {
+          key: c.Id,
+          Name: c.Title,
+          Course: c.Course,
+          Member: c.Member,
+          Size: c.Size,
+          Icon:c.Icon 
+        };
+      });
+
+      return Promise.resolve(data);
+    }
+      return Promise.resolve(MockData.TblMehdiValues);
+   //return Promise.resolve([]);
   }
 
   //

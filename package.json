@@ -23,11 +23,13 @@
     "deploy:production": "run-s build deploy-build-production",
     "deploy:dev1": "env-cmd -f .env.development run-s build deploy-build-dev1",
     "deploy:dev2": "env-cmd -f .env.dev run-s build deploy-build-dev2",
-    "deploy-build": "ts-node --project ./bin/tsconfig.json ./bin/uploadFolderToSP.ts \"./build/**\" \"/Apps/Staging/Cafeteria\" \"staging\"",
-    "deploy-build-dev1": "ts-node --project ./bin/tsconfig.json ./bin/uploadFolderToSP.ts \"./build/**\" \"/Apps/Dev1\" \"staging\"",
-    "deploy-build-dev2": "ts-node --project ./bin/tsconfig.json ./bin/uploadFolderToSP.ts \"./build/**\" \"/Apps/Dev2\" \"staging\"",
-    "deploy-build-production": "ts-node --project ./bin/tsconfig.json ./bin/uploadFolderToSP.ts \"./build/**\" \"/Apps/Numano\" \"production\"",
-    "deploy-api": "ts-node --project ./bin/tsconfig.json ./bin/uploadFolderToSP.ts \"./src/api/**\" \"/Apps/Cafeteria\""
+    "deploy:dev3": "env-cmd -f .env.dev run-s build deploy-build-dev3",
+    "deploy-build": "ts-node --project ./bin/tsconfig.json ./bin/uploadFolderToSP.ts \"./build/**\" \"/React/Staging\" \"staging\"",
+    "deploy-build-dev1": "ts-node --project ./bin/tsconfig.json ./bin/uploadFolderToSP.ts \"./build/**\" \"/React/Samira\" \"staging\"",
+    "deploy-build-dev2": "ts-node --project ./bin/tsconfig.json ./bin/uploadFolderToSP.ts \"./build/**\" \"/React/Ramtin\" \"staging\"",
+    "deploy-build-dev3": "ts-node --project ./bin/tsconfig.json ./bin/uploadFolderToSP.ts \"./build/**\" \"/React/Mehdi\" \"staging\"",
+    "deploy-build-production": "ts-node --project ./bin/tsconfig.json ./bin/uploadFolderToSP.ts \"./build/**\" \"/React/production\" \"production\""
+    
   },
   "browserslist": {
     "production": [
