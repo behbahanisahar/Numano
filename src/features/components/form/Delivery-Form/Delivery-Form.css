@@ -1,0 +1,35 @@
+.CartContainer{
+ display: flex;
+ justify-content: space-around;
+ height: 150px;
+}
+
+.cardheader
+{display: flex;
+justify-content: space-between;
+align-items: stretch;
+flex-wrap: wrap;
+min-height: 70px;
+padding-top: 0;
+padding-bottom: 0;
+background-color: transparent;
+padding: 2rem 2.25rem;
+margin-bottom: 0;
+}
+.card-delivery{
+ margin-bottom: 5%;
+}
+.CartContainer>div{
+ border: 1px solid gray ;
+}
+.CartContainer>div>button>div>p{
+ text-align: left;
+ float: left;
+ font-size: 1r;
+}
+.CartContainer>div>button>div>h2>label :nth-child(2){
+ color: black !important;
+}
+.card-delivery>div>button>div>h2>span{
+ color: #8950fc;
+}

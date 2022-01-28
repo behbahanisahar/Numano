@@ -38,13 +38,14 @@ export default class SPRestService {
         return {
           key: c.Id,
           text: c.Title,
+          Icon:c.Icon
         };
       });
 
       return Promise.resolve(data);
     }
-      return Promise.resolve(MockData.dropDownValues);
-    // return Promise.resolve([]);
+      // return Promise.resolve(MockData.dropDownValues);
+    return Promise.resolve([]);
   }
 
   //

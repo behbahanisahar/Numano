@@ -43,14 +43,17 @@ export default class MockData {
     {
       text: "test",
       key: "1",
+      Icon:"shopping"
     },
     {
       text: "test",
       key: "2",
+      Icon:"shopping"
     },
     {
       text: "test3",
       key: "3",
+      Icon:"shopping"
     },
   ];
   public static MyTableValues: MyTableModel[] = [

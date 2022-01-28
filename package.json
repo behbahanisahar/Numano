@@ -27,7 +27,6 @@
     "deploy-build-dev1": "ts-node --project ./bin/tsconfig.json ./bin/uploadFolderToSP.ts \"./build/**\" \"/React/Samira\" \"staging\"",
     "deploy-build-dev2": "ts-node --project ./bin/tsconfig.json ./bin/uploadFolderToSP.ts \"./build/**\" \"/React/Ramtin\" \"staging\"",
     "deploy-build-production": "ts-node --project ./bin/tsconfig.json ./bin/uploadFolderToSP.ts \"./build/**\" \"/React/production\" \"production\""
-   
   },
   "browserslist": {
     "production": [
@@ -48,6 +47,10 @@
     "@babel/plugin-proposal-nullish-coalescing-operator": "^7.7.4",
     "@baristalabs/craco-raw-loader": "^1.2.0",
     "@craco/craco": "^5.6.2",
+    "@date-io/date-fns": "^1.3.13",
+    "@date-io/dayjs": "^2.13.1",
+    "@date-io/luxon": "^2.13.1",
+    "@date-io/moment": "^2.13.1",
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
     "@jackwilsdon/craco-use-babelrc": "^1.0.0",
@@ -56,6 +59,7 @@
     "@material-ui/lab": "^4.0.0-alpha.56",
     "@material-ui/pickers": "^3.3.10",
     "@mui/icons-material": "^5.2.5",
+    "@mui/lab": "^5.0.0-alpha.66",
     "@mui/material": "^5.3.0",
     "@navikt/craco-plugins": "^1.0.1",
     "@pnp/common": "^1.3.5",
@@ -88,6 +92,7 @@
     "craco": "^0.0.3",
     "craco-babel-loader": "^0.1.4",
     "craco-less": "^1.16.0",
+    "date-fns": "^2.28.0",
     "debug": "^4.1.1",
     "env-cmd": "^10.1.0",
     "eslint": "^6.8.0",

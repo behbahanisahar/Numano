@@ -1,5 +1,6 @@
 .MuiFormControl-root{
  min-width: 150px !important;
+ 
 }
 
 #demo-customized-button{
@@ -15,6 +16,10 @@ color: #FFFFFF;
 
 .text-blue {
  color:  #3699FF !important;
+}
+.MuiMenuItem-root{
+ justify-content: end !important;
+ 
 }
 
 .MuiMenuItem-root:hover{

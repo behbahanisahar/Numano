@@ -1,0 +1,39 @@
+.card-custom{
+ direction: ltr;
+}
+label{
+ float: left;
+}
+label>span{
+ color: red;
+}
+.CalenderRow{
+ display: flex;
+}
+.CalenderRow >div>div{
+ flex-direction: row !important;
+ justify-content: space-between;
+}
+.leftcol >div>div{
+ width: 50%;
+}
+.CalenderRow >div :nth-child(2){
+margin-top: unset;
+margin-left: 1%;
+}
+.CalenderRow >div>div>div>div>input{
+ height: 0.4375em;
+}
+.leftcol{
+ padding-left: unset !important;
+}
+.Rightcol>div>div>input{
+ height: 0.1676em;
+}
+.Rightcol>div{
+ width: 100%;
+}
+.Rightcol>div>div{
+ width: 100%;
+
+}
