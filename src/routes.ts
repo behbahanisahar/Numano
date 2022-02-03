@@ -1,4 +1,4 @@
-import Home from "./features/components/home";
+import TableSamira from "./features/components/table/table";
 
 export interface RouteTypes {
   exact: boolean;
@@ -11,7 +11,7 @@ const routes: RouteTypes[] = [
   {
     exact: true,
     path: "/",
-    component: Home,
+    component: TableSamira,
   },
 ];
 
