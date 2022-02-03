@@ -5,9 +5,11 @@ import { ReactElement } from "react";
 
 import DeliveryForm from "./delivery-form/delivery-form";
 import ContentForm from "./content-form/content-form";
-import FooterForm from "./footer-form/footer-form";
+
 import HeaderForm from "./header-form/header-form";
 import "./form.css";
+import FooterForm from "./footer-form/footer-form";
+
 
 
 const Form = (): ReactElement => {
