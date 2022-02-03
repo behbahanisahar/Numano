@@ -2,7 +2,7 @@ import { sp } from "@pnp/sp";
 import DropDownModel from "src/entities/drop-down";
 import MyTablesModel from "src/entities/MyTables";
 import SPLists from "src/entities/lists";
-// import MockData from "./sp-mock-data";
+import MockData from "./sp-mock-data";
 
 export default class SPRestService {
   public constructor() {
@@ -72,8 +72,8 @@ export default class SPRestService {
 
       return Promise.resolve(data);
     }
-      //  return Promise.resolve(MockData.MyTableValues);
-    return Promise.resolve([]);
+      return Promise.resolve(MockData.MyTableValues);
+    // return Promise.resolve([]);
   }
 
   //

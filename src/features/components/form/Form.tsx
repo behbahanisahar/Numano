@@ -7,7 +7,7 @@ import DeliveryForm from "./delivery-form/delivery-form";
 import ContentForm from "./content-form/content-form";
 import FooterForm from "./footer-form/footer-form";
 import HeaderForm from "./header-form/header-form";
-import "./Form.css";
+import "./form.css";
 
 
 const Form = (): ReactElement => {

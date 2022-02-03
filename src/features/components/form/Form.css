@@ -2,3 +2,7 @@
   box-shadow: unset !important;
   border-radius: unset !important;
 }
+.form-control[readonly] {
+  background-color: #dddddd !important;
+  cursor: not-allowed;
+}
