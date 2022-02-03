@@ -1,7 +1,7 @@
 import * as React from "react";
 import { ReactElement } from "react";
 import InputTextField from "../InPut";
-import "./Content-Form.css";
+import "./content-form.css";
 
 
 const ContentForm = (): ReactElement => {

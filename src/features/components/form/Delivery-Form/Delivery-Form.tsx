@@ -1,7 +1,7 @@
 import * as React from "react";
 import { ReactElement } from "react";
-import MyCard from "../MyCard/MyCard";
-import './Delivery-Form.css';
+import MyCard from "../mycard-form/mycard";
+import './delivery-form.css';
 
 
 const DeliveryForm = (): ReactElement => {

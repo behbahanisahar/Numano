@@ -1,6 +1,6 @@
 import * as React from "react";
 import { ReactElement } from "react";
-import "./Footer-Form.css";
+import "./footer-form.css";
 
 const FooterForm = (): ReactElement => {
  return (

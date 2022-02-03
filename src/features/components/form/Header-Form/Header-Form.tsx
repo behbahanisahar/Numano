@@ -1,9 +1,9 @@
 import { TextField } from "@material-ui/core";
 import * as React from "react";
 import { ReactElement } from "react";
-import MaterialUIPickers from "../Calender/Calender";
+import ViewsDatePicker from "../calender/calender";
 import InputTextField from "../InPut";
-import "./Header-Form.css";
+import "./header-form.css";
 
 const HeaderForm = (): ReactElement => {
  
@@ -20,7 +20,7 @@ const HeaderForm = (): ReactElement => {
           <InputTextField label={"Cardholder Name"} readonly={false} nessesary={true}/>
           <InputTextField label={"Cardholder Number"} readonly={false} nessesary={true}/>
         <div className="CalenderRow">
-          <div className="col-md-8 leftcol"> <MaterialUIPickers/></div>
+          <div className="col-md-8 leftcol"> <ViewsDatePicker/></div>
           <div className="col-md-4 Rightcol"> <TextField id="outlined-helperText" label="*CVV" defaultValue=" " variant="outlined"/></div>
         </div>
 

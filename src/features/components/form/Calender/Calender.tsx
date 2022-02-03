@@ -6,10 +6,6 @@ import DatePicker from '@mui/lab/DatePicker';
 import Stack from '@mui/material/Stack';
 
 
-// interface Props {
-//  value: string|"year" | "date" | "month" ;
-// }
-
 export default function ViewsDatePicker() {
   const [value, setValue] = React.useState<Date | null>(new Date());
 

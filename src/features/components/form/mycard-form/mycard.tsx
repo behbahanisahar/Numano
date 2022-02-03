@@ -4,7 +4,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import { FormControlLabel, Radio } from '@mui/material';
 import React, { ReactElement } from 'react';
-import './MyCard.css';
+import './mycard.css';
 
 
 interface Props {

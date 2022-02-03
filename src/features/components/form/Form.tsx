@@ -1,11 +1,14 @@
 import { Grid } from "@material-ui/core";
 import * as React from "react";
 import { ReactElement } from "react";
-import FooterForm from "./Footer-Form/Footer-Form";
-import HeaderForm from "./Header-Form/Header-Form";
-import ContentForm from "./Content-Form/Content-Form";
-import DeliveryForm from "./Delivery-Form/Delivery-Form";
+
+
+import DeliveryForm from "./delivery-form/delivery-form";
+import ContentForm from "./content-form/content-form";
+import FooterForm from "./footer-form/footer-form";
+import HeaderForm from "./header-form/header-form";
 import "./Form.css";
+
 
 const Form = (): ReactElement => {
  return (
@@ -13,9 +16,9 @@ const Form = (): ReactElement => {
      <Grid container spacing={3}>
         <Grid item xs={12}>
             <HeaderForm />
-            <ContentForm />
+            <ContentForm/>
             <DeliveryForm />
-           <FooterForm />
+            <FooterForm />
         </Grid>
       </Grid>
     
