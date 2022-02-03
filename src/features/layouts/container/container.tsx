@@ -11,7 +11,6 @@ import "./container.css";
 
 const Container = (): ReactElement => {
   const appContext = useContext(Context);
-
   const userInfo = useService<UserInfo>(ListServices.getUserInfoDTO(appContext?.state.impersonatedUserId));
   const settings = useService<SettingItem>(ListServices.getSettingData());
 

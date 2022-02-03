@@ -1,5 +1,6 @@
 import * as React from "react";
 import { ReactElement } from "react";
+import { Link } from "react-router-dom";
 import { DKCardBody } from "src/core/components/card";
 import { DKCard } from "src/core/components/card/card";
 import { DKCardHeader } from "src/core/components/card/card-header";
@@ -17,6 +18,9 @@ const Home = (): ReactElement => {
         </DKCardHeader>
         <DKCardBody>
           <TableSamira />
+          <Link className="btn btn-primary cursor-pointer" to={"/form"}>
+            See more...
+          </Link>
           {/* <DKSVGIcon color="success" size="md" iconName="Clipboard"/> */}
         </DKCardBody>
       </DKCard>
