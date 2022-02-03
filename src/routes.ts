@@ -1,5 +1,4 @@
-
-import MyForm from "./features/components/form/my-form";
+import Form2 from "./features/components/form2/form2";
 import Home from "./features/components/home";
 import TableSamira from "./features/components/table/table";
 
@@ -19,7 +18,7 @@ const routes: RouteTypes[] = [
   {
     exact: true,
     path: "/form",
-    component: MyForm,
+    component: Form2,
   },
   {
     exact: true,
