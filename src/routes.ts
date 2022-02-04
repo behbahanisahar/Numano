@@ -1,5 +1,6 @@
 
-import Form from "src/features/components/form/form";
+
+import Form from "./features/components/form/form";
 import Home from "./features/components/home";
 import table from "./features/components/table/table";
 

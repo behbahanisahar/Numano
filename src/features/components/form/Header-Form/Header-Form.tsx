@@ -1,12 +1,18 @@
 import { TextField } from "@material-ui/core";
 import * as React from "react";
-import { ReactElement } from "react";
-import ViewsDatePicker from "../calender/calender";
+import { ReactElement} from "react";
+import ViewsDatePicker from "../Calender/Calender";
+import FormItem from "../form-item";
 import InputTextField from "../InPut";
-import "./header-form.css";
+import "./Header-Form.css";
 
-const HeaderForm = (): ReactElement => {
+interface Props {
+  SendFilds:(fieldname: string, value: string) => void;
+  formData: FormItem;
  
+}
+
+const HeaderForm = ({SendFilds,formData}: Props): ReactElement => {
  return (
    <>
      <div className="card card-custom">
@@ -17,11 +23,15 @@ const HeaderForm = (): ReactElement => {
       </div>
       <form>
        <div className="card-body">
-          <InputTextField label={"Cardholder Name"} readonly={false} nessesary={true} autoComplete="off"/>
-          <InputTextField label={"Cardholder Number"} readonly={false} nessesary={true} autoComplete="off"/>
+          <InputTextField formData={formData} onChange={SendFilds} label={"CardholderName"} readonly={false} nessesary={true} autoComplete="off"/>
+          <InputTextField  formData={formData} onChange={SendFilds} label={"CardholderNumber"} readonly={false} nessesary={true} autoComplete="off"/>
         <div className="CalenderRow">
-          <div className="col-md-8 leftcol"> <ViewsDatePicker/></div>
-          <div className="col-md-4 Rightcol"> <TextField id="outlined-helperText" label="*CVV" defaultValue=" " variant="outlined"/></div>
+          <div className="col-md-8 leftcol"> 
+            <ViewsDatePicker/>
+          </div>
+          <div className="col-md-4 Rightcol">
+            <TextField id="outlined-helperText" label="*CVV" defaultValue=" " variant="outlined"/>
+          </div>
         </div>
 
        </div>
