@@ -12,7 +12,7 @@ interface Props {
   multiline?:boolean;
   autoComplete?:string;
   onChange: (fieldname: string, value: string) => void;
-  formData: FormItem;
+  formData: FormItem[];
 }
 
 const InputTextField = ({ label: Persianlabel, value, readonly ,nessesary,multiline,autoComplete, onChange,formData }: Props): ReactElement => {

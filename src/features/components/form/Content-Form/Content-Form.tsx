@@ -6,7 +6,7 @@ import "./Content-Form.css";
 
 interface Props {
   SendFilds:(fieldname: string, value: string) => void;
-  formData: FormItem;
+  formData: FormItem[];
  
 }
 

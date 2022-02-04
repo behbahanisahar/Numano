@@ -8,7 +8,7 @@ import "./Header-Form.css";
 
 interface Props {
   SendFilds:(fieldname: string, value: string) => void;
-  formData: FormItem;
+  formData: FormItem[];
  
 }
 
