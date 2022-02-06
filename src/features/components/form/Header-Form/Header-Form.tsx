@@ -8,7 +8,8 @@ import "./Header-Form.css";
 
 interface Props {
   SendFilds:(fieldname: string, value: string) => void;
-  formData: FormItem[];
+  formData: FormItem;
+  
  
 }
 
@@ -23,8 +24,8 @@ const HeaderForm = ({SendFilds,formData}: Props): ReactElement => {
       </div>
       <form>
        <div className="card-body">
-          <InputTextField formData={formData} onChange={SendFilds} label={"CardholderName"} readonly={false} nessesary={true} autoComplete="off"/>
-          <InputTextField  formData={formData} onChange={SendFilds} label={"CardholderNumber"} readonly={false} nessesary={true} autoComplete="off"/>
+          <InputTextField formData={formData} value={formData.CardholderName} onChange={SendFilds} label={"CardholderName"} readonly={false} nessesary={true} autoComplete="off"/>
+          <InputTextField  formData={formData} value={formData.CardholderNumber} onChange={SendFilds} label={"CardholderNumber"} readonly={false} nessesary={true} autoComplete="off"/>
         <div className="CalenderRow">
           <div className="col-md-8 leftcol"> 
             <ViewsDatePicker/>

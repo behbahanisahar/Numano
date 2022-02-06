@@ -10,22 +10,26 @@ import FormItem from "./form-item";
 
 
 
-
  const Form = (): ReactElement => {
-  const [formdata, setFormData] = useState<FormItem[]>([{ CardholderName: "", CardholderNumber: "",Address1:"",Address2:"",City:"",State:"",ZIP:"",Cvv:""}]);
+  const [formdata, setFormData] = useState<FormItem>({ CardholderName: "", CardholderNumber: "",Address1:"",Address2:"",City:"",State:"",ZIP:"",Cvv:""});
   const onChangeFields = (fieldname: string, value: string): void => {
     setFormData({ ...formdata, [fieldname]: value });
-    console.log(formdata);
-    
+ 
   };
+  const resetData = (): void => {
+    setFormData({ CardholderName: "", CardholderNumber: "",Address1:"",Address2:"",City:"",State:"",ZIP:"",Cvv:""});
+  
+  };
+
+ 
  return (
    <>
      <Grid container spacing={3}>
         <Grid item xs={12}>
-            <HeaderForm  SendFilds={onChangeFields} formData={formdata}/>
+            <HeaderForm  SendFilds={onChangeFields} formData={formdata} />
             <ContentForm SendFilds={onChangeFields} formData={formdata} />
             <DeliveryForm />
-            <FooterForm  data={formdata}/>
+            <FooterForm resetData={resetData} data={formdata}/>
         </Grid>
       </Grid>
     
