@@ -14,7 +14,7 @@ const Home = (): ReactElement => {
     <>
       <DKCard>
         <DKCardHeader hasComplexHeader={true} noBorder={true} className={"p-5 ltr"}>
-          <HeaderContent title="Files" subTitle="More than 400+ new members" />
+        <HeaderContent title="Files" subTitle="More than 400+ new members" />
         </DKCardHeader>
         <DKCardBody>
           <TableSamira />
