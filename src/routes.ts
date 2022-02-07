@@ -1,4 +1,5 @@
 import Home from "./features/components/home";
+import MyForm from "./features/components/myform/myform";
 
 export interface RouteTypes {
   exact: boolean;
@@ -12,6 +13,11 @@ const routes: RouteTypes[] = [
     exact: true,
     path: "/",
     component: Home,
+  },
+  {
+    exact: true,
+    path: "/Form",
+    component: MyForm,
   },
 ];
 
