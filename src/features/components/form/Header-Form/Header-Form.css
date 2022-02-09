@@ -24,8 +24,8 @@ margin-left: 1%;
 .CalenderRow >div>div>div>div>input{
  height: 0.4375em;
 }
-.leftcol{
- padding-left: unset !important;
+.Rightcol{
+ margin-top: -26px;
 }
 .Rightcol>div>div>input{
  height: 0.1676em;

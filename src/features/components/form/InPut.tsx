@@ -23,7 +23,7 @@ const InputTextField = ({ label: Persianlabel, value, readonly ,nessesary,multil
       <div className="text-container">
         <div className="form-group">
           <label><span>{nessesary ? '*':''}</span>{Persianlabel}:</label>
-            <TextField type="text" className="form-control" value={value} placeholder="" variant="standard" autoComplete={autoComplete} InputProps={{
+            <TextField type="text" className="form-control" value={value} placeholder="" label="" variant="outlined" autoComplete={autoComplete} InputProps={{
             readOnly: readonly,
             multiline:multiline,
             }} 

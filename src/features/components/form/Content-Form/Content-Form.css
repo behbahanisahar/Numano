@@ -1,3 +1,10 @@
 .card-content{
  border-top: 1px dotted #67686c !important;
 }
+
+.RightCol{
+ margin-left: -13px;
+}
+.MiddleCol{
+ margin-left: -8px;
+}

@@ -28,9 +28,9 @@ const ContentForm = ({SendFilds,formData}: Props): ReactElement => {
         <div className="row">
           <div className="col-md-6">
             <InputTextField formData={formData} value={formData.City} onChange={SendFilds} label={"City"} readonly={false} nessesary={true} multiline={false} autoComplete="off" /></div>
-          <div className="col-md-4">
+          <div className="col-md-4 MiddleCol">
             <InputTextField formData={formData} value={formData.State} onChange={SendFilds} label={"State"} readonly={false} nessesary={true} multiline={false} autoComplete="off" /></div>
-          <div className="col-md-2">
+          <div className="col-md-2 RightCol">
             <InputTextField formData={formData} value={formData.ZIP} onChange={SendFilds} label={"ZIP"} readonly={false} nessesary={true} multiline={false} autoComplete="off" /></div>
         </div>
        </div>

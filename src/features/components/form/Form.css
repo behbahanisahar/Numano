@@ -6,3 +6,6 @@
   background-color: #dddddd !important;
   cursor: not-allowed;
 }
+input{
+  height: 0.2175em !important;
+}

@@ -17,9 +17,31 @@ import FormItem from "./form-item";
  
   };
   const resetData = (): void => {
-    setFormData({ CardholderName: "", CardholderNumber: "",Address1:"",Address2:"",City:"",State:"",ZIP:"",Cvv:""});
+    setFormData({ CardholderName: "", CardholderNumber: "",Address1:"" ,Address2:"" ,City:"" ,State:"" ,ZIP:"" ,Cvv:""});
   
   };
+  const EditData =(i:number,TblArray:FormItem[])=>{
+    let NewArray;
+    NewArray=[TblArray[i]];
+    NewArray.map((item,key)=>{
+      setFormData({ CardholderName: item.CardholderName,
+                    CardholderNumber:item.CardholderNumber,
+                    Address1:item.Address1,
+                    Address2:item.Address2,
+                    City:item.City,
+                    State:item.State,
+                    ZIP:item.ZIP,
+                    Cvv:item.Cvv});
+    })
+
+    // for (const [key, value] of Object.entries(NewArray)) {
+  
+    //   console.log(`${key}: ${value}`);
+    //   setFormData({[key]:value})
+    // }
+    
+  }
+  
 
  
  return (
@@ -29,7 +51,7 @@ import FormItem from "./form-item";
             <HeaderForm  SendFilds={onChangeFields} formData={formdata} />
             <ContentForm SendFilds={onChangeFields} formData={formdata} />
             <DeliveryForm />
-            <FooterForm resetData={resetData} data={formdata}/>
+            <FooterForm EditData={EditData} resetData={resetData} data={formdata}/>
         </Grid>
       </Grid>
     
