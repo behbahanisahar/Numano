@@ -4,8 +4,8 @@
     height: 150px;
    }
    
-   .cardheader
-   {display: flex;
+   .cardheader{
+ display: flex;
    justify-content: space-between;
    align-items: stretch;
    flex-wrap: wrap;
@@ -25,11 +25,14 @@
    .CartContainer>div>button>div>p{
     text-align: left;
     float: left;
-    font-size: 1r;
+   
    }
    .CartContainer>div>button>div>h2>label :nth-child(2){
     color: black !important;
    }
    .card-delivery>div>button>div>h2>span{
     color: #8950fc;
+   }
+   .LabelCart{
+       float: left;
    }

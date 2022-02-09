@@ -2,10 +2,17 @@ import * as React from "react";
 import { ReactElement } from "react";
 import TextField from "@mui/material/TextField";
 import { FormControl, InputLabel, Select, MenuItem } from "@material-ui/core";
+import MyFormItem from "../myform-item";
+import './myform-content.css';
 
 
+interface Props {
+  onChange: (fieldname: string, value: string) => void;
+  data:MyFormItem
+  
+}
 
-const MyFormContent = (): ReactElement => {
+const MyFormContent = ({data,onChange}:Props): ReactElement => {
   return (
     <>
 
@@ -18,10 +25,14 @@ const MyFormContent = (): ReactElement => {
       <form>
               <div className="card-body">
                   <div className="row">
-                    <TextField  className="form-control" id="outlined-basic" label="CardHolder Name:" variant="outlined" required/>
+                    <TextField  className="form-control" id="outlined-basic"  label="CardholderName" variant="outlined" 
+                    onChange={(e: any) => onChange("CardholderName",e.target.value)} value={data.CardholderName}
+                    required/>
                   </div>
                   <div className="row mt-20">
-                    <TextField  className="form-control" id="outlined-basic" label="CardNumber:" variant="outlined" required />
+                    <TextField  className="form-control" id="outlined-basic" label="CardholderNumber" variant="outlined" 
+                     onChange={(e: any) => onChange("CardholderNumber",e.target.value)} value={data.CardholderNumber}
+                    required />
                   </div>
                 <div className="row mt-20">
                     <div className="col-md-4">
@@ -52,8 +63,10 @@ const MyFormContent = (): ReactElement => {
                                 </Select>
                             </FormControl>
                     </div>
-                    <div className="col-md-4">
-                    <TextField  className="form-control" id="outlined-basic" label="CVV:" variant="outlined" required />  
+                    <div className="col-md-4 lastDiv">
+                    <TextField  className="form-control" id="outlined-basic" label="Cvv" variant="outlined"
+                    onChange={(e: any) => onChange("Cvv",e.target.value)} value={data.Cvv}
+                    required />  
                     </div>
                 </div>
                
