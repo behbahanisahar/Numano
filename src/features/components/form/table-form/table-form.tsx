@@ -45,8 +45,8 @@ return data.map((item: FormItem,i) => {
 const RenderHeaderTable = () => {
 const HeaderTbl=[
   'Action',
-  'CardholderName',
-  'CardholderNumber',
+  'Cardholder Name',
+  'Cardholder Number',
   'Cvv',
   'Address1',
   'Address2',
