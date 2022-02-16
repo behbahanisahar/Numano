@@ -27,6 +27,7 @@ const FooterForm = ({ data, resetData, EditData }: Props): ReactElement => {
       const NewArray=[...TblArray];
       NewArray[TRIndex]=data;
       setTblArray(NewArray);
+      SetEditFlag(false)
     }
   
   resetData();

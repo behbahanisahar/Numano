@@ -29,14 +29,14 @@ const TableForm = ({ Inputvalue,data, EditData,ChangeInput,EditFlag,SetTRIndex }
       return (
  
     <TableRow key={i}>
-      <TableCell onClick={() =>{
+      <TableCell >
+        <div className="symbol" onClick={() =>{
         EditData(i,data);
         EditFlag(true);
         SetTRIndex(i)
       
       } 
         }>
-        <div className="symbol">
           <span className="symbol-label">
             <span><DKSVGIcon iconName="Edit"/></span>
           </span>
