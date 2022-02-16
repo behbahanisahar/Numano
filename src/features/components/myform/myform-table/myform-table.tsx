@@ -13,9 +13,11 @@ import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 interface Props {
   data: MyFormItem[];
   EditRow:(i:number,data:MyFormItem[])=> void;
+  setEditFlag :(x: boolean) => void;
+  setTblRowIndex :(x: number) => void;
 }
 
-const MyFormTable = ({ data ,EditRow}: Props): ReactElement => {
+const MyFormTable = ({ data ,EditRow,setEditFlag,setTblRowIndex}: Props): ReactElement => {
  
   const RenderHeaderTable = (): React.ReactNode => {
       const HeaderTbl=[
@@ -48,7 +50,14 @@ const MyFormTable = ({ data ,EditRow}: Props): ReactElement => {
             <TableCell >
               <div className="symbol">
                 <span className="symbol-label">
-                  <span><FontAwesomeIcon icon={faCoffee} onClick={()=>EditRow(i,data)}/></span>
+                  <span><FontAwesomeIcon icon={faCoffee} onClick={()=>
+                  {
+                    EditRow(i,data)
+                    setEditFlag(true)
+                    setTblRowIndex(i)
+                  }
+                   
+                    }/></span>
                 </span>
               </div>
           </TableCell>

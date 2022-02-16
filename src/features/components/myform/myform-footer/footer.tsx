@@ -13,8 +13,17 @@ interface Props {
 
 const MyFormFooter = ({ EditRow,data,ClearForm }: Props): ReactElement => {
   const [dataArray, setdataArray] = useState<MyFormItem[]>([]);
+  const [Editflag, setEditFlag] = useState<boolean>(false);
+  const [TblRowIndex, setTblRowIndex] = useState<number>(0);
   const Savedata = () => { 
+    if (!Editflag) {
     setdataArray(dataArray => [...dataArray,data]);
+    }
+    else{
+      const NewArray =[...dataArray];
+      NewArray[TblRowIndex]=data;
+      setdataArray(NewArray);
+    }
     ClearForm();
 
   };
@@ -23,10 +32,15 @@ const MyFormFooter = ({ EditRow,data,ClearForm }: Props): ReactElement => {
     <>
         <div className="card-footer">
           <div className="card-footer-btn">
+          {!Editflag && (
            <button type="submit" onClick={Savedata} className="btn btn-info mr-2" >Submit</button>
+          )}
+           {Editflag && (
+           <button type="submit" onClick={Savedata} className="btn btn-info mr-2" >Update</button>
+           )}
            <button type="reset" className="btn btn-cancel">cancel</button>
           </div>
-          <MyFormTable EditRow={EditRow}  data={dataArray}/>
+          <MyFormTable EditRow={EditRow}  data={dataArray} setEditFlag={setEditFlag} setTblRowIndex={setTblRowIndex}/>
         </div>
     
     </>
