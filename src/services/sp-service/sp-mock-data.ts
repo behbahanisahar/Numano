@@ -1,8 +1,10 @@
 /* eslint-disable @typescript-eslint/camelcase */
 
 import DropDownModel from "src/entities/drop-down";
+import MyTableModel from "src/entities/MyTables";
 import SettingItem from "src/entities/setting-item";
 import UserInfo from "src/entities/userinfo";
+// import DKSVGIcon from "src/core/components/svg-icon/svg-icon";
 
 export default class MockData {
   public static UserInfo: UserInfo = {
@@ -41,14 +43,47 @@ export default class MockData {
     {
       text: "test",
       key: "1",
+      Icon:"shopping"
     },
     {
       text: "test",
       key: "2",
+      Icon:"shopping"
     },
     {
       text: "test3",
       key: "3",
+      Icon:"shopping"
     },
+  ];
+  public static MyTableValues: MyTableModel[] = [
+    {
+      iconName:"Cart3",
+      key: "first",
+      name:"test1",
+      Course:"computer",
+      Member:"12",
+      size:"12",
+
+    },
+    {
+      iconName:"blocks",
+      key: "Second",
+      name:"test2",
+      Course:"Math",
+      Member:"13",
+      size:"13",
+
+    },
+    {
+      iconName:"Group",
+      key: "third",
+      name:"test3",
+      Course:"Art",
+      Member:"14",
+      size:"14",
+
+    },
+    
   ];
 }

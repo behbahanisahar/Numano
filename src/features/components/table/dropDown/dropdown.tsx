@@ -3,9 +3,11 @@ import InputLabel from "@material-ui/core/InputLabel";
 import Select from "@material-ui/core/Select";
 import MenuItem from "@mui/material/MenuItem";
 import React, { ReactElement, useEffect, useState } from "react";
+import DKSVGIcon from "src/core/components/svg-icon/svg-icon";
 import DropDownModel from "src/entities/drop-down";
 import SPRestService from "src/services/sp-service/sp-services";
 import "./dropdown.css";
+
 
 const CustomizedMenus = (): ReactElement => {
   const [create, setcreate] = React.useState("");
@@ -16,19 +18,20 @@ const CustomizedMenus = (): ReactElement => {
   };
   const getDropDownValues = async (): Promise<void> => {
     const values = await spRestService.getDropDownValues();
-    console.log(values);
+   
     setDropdownValues(values);
   };
 
   useEffect(() => {
     getDropDownValues();
-    console.log(dropdownValues);
+    
   }, []);
   const renderDropDown = (): React.ReactNode => {
     return dropdownValues.map((item: DropDownModel) => {
       return (
         <MenuItem value={item.text} key={item.key}>
-          {item.text === "test" ? <span className="text-primary">{item.text}</span> : item.text}
+          <span>{item.text === "test" ? <span className="text-primary">{item.text}</span> : item.text}</span>
+          <span><DKSVGIcon  iconName={item.Icon}/></span>  
         </MenuItem>
       );
     });

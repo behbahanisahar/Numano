@@ -1,5 +1,6 @@
 import { sp } from "@pnp/sp";
 import DropDownModel from "src/entities/drop-down";
+import MyTablesModel from "src/entities/MyTables";
 import SPLists from "src/entities/lists";
 import MockData from "./sp-mock-data";
 
@@ -37,13 +38,42 @@ export default class SPRestService {
         return {
           key: c.Id,
           text: c.Title,
+          Icon:c.Icon
         };
       });
 
       return Promise.resolve(data);
     }
-      return Promise.resolve(MockData.dropDownValues);
-   // return Promise.resolve([]);
+      // return Promise.resolve(MockData.dropDownValues);
+    return Promise.resolve([]);
+  }
+
+  //
+
+  /*********************************************************************************** */
+  public async GetMyTableValues(): Promise<MyTablesModel[]> {
+    if (process.env.NODE_ENV === "production") {
+      const listData: any = await sp.web.lists
+        .getByTitle(SPLists.tablesamira)
+        .items.top(1000)
+        .get();
+
+      const data = listData.map((c: any) => {
+        return {
+          key: c.Id,
+          name: c.Title,
+          Course: c.Course,
+          Member: c.Member,
+          size: c.size,
+          iconName:c.iconName
+
+        };
+      });
+
+      return Promise.resolve(data);
+    }
+      return Promise.resolve(MockData.MyTableValues);
+    // return Promise.resolve([]);
   }
 
   //

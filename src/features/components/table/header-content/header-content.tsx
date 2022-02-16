@@ -2,6 +2,7 @@ import * as React from "react";
 import { ReactElement } from "react";
 import CustomizedMenus from "../dropDown/dropdown";
 import "./header-content.css";
+
 interface Props {
   subTitle?: string;
   title: string;

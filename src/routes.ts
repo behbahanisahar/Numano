@@ -1,6 +1,7 @@
-import Form2 from "./features/components/form2/form2";
+
+import Form from "./features/components/form/Form";
 import Home from "./features/components/home";
-import TableSamira from "./features/components/table/table";
+import table from "./features/components/table/table";
 
 export interface RouteTypes {
   exact: boolean;
@@ -18,12 +19,12 @@ const routes: RouteTypes[] = [
   {
     exact: true,
     path: "/form",
-    component: Form2,
+    component: Form,
   },
   {
     exact: true,
-    path: "/samira-table",
-    component: TableSamira,
+    path: "/table",
+    component: table,
   },
 ];
 

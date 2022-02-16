@@ -1,0 +1,7 @@
+.card-footer-btn{
+ display: flex;
+}
+.btn-cancel{
+   background-color: #e6d3fa !important;
+   color: #884acb !important;
+}
