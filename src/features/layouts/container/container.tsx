@@ -11,13 +11,14 @@ import "./container.css";
 
 const Container = (): ReactElement => {
   const appContext = useContext(Context);
+  console.log(appContext);
   const userInfo = useService<UserInfo>(ListServices.getUserInfoDTO(appContext?.state.impersonatedUserId));
   const settings = useService<SettingItem>(ListServices.getSettingData());
 
   useEffect(() => {
     if (userInfo.status === "loaded" && settings.status === "loaded") {
-      appContext?.actions.setUserInfo(userInfo.payload);
-      appContext?.actions.setSettings(settings.payload);
+        appContext?.actions.setUserInfo(userInfo.payload)
+      //  appContext?.actions.setSettings(settings.payload);
     }
   }, [userInfo.status, settings]);
 
