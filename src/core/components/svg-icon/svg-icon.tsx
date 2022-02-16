@@ -7,6 +7,7 @@ interface Props {
   iconName: keyof typeof icons;
   className?: string;
   color?: "success" | "dark" | "danger" | "primary" | "warning" | "white" | "gray-light" | "green-dark" | string;
+
 }
 
 export default class DKSVGIcon extends React.Component<Props> {

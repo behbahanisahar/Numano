@@ -16,19 +16,20 @@ const FooterForm = ({ data, resetData, EditData }: Props): ReactElement => {
 
   const [TblArray, setTblArray] = useState<FormItem[]>([]);
   const [searchInput, setsearchInput] = useState([]);
-  //  console.log(searchInput)
-
-
-  const Submitdata = (CardholderName:string) => {
+  const [EditFlag, SetEditFlag] = useState<boolean>(false);
+  const [TRIndex, SetTRIndex] = useState<number>(0);
  
-
-  setTblArray(TblArray => [...TblArray, data]);
-    var commentIndex = TblArray.findIndex(function(c) { 
-      return c.CardholderName == CardholderName; 
-  });
-  console.log(commentIndex);
+  const Submitdata = () => {
+    if (!EditFlag) {
+      setTblArray(TblArray => [...TblArray, data]);
+    }
+    else{
+      const NewArray=[...TblArray];
+      NewArray[TRIndex]=data;
+      setTblArray(NewArray);
+    }
   
-    resetData();
+  resetData();
   };
 
   const ChangeInput = (value: any, Tbldata: FormItem[]): void => {
@@ -56,17 +57,21 @@ const FooterForm = ({ data, resetData, EditData }: Props): ReactElement => {
   }
 
 
-
-
   return (
     <>
       <div className="card-footer">
         <div className="card-footer-btn">
-          <button type="submit" onClick={()=>Submitdata(data.CardholderName)} className="btn btn-info mr-2">Submit</button>
+        {!EditFlag && (
+            <button type="submit" onClick={Submitdata} className="btn btn-info mr-2">Submit</button>
+        )}
+        {EditFlag && (
+            <button type="reset" onClick={Submitdata} className="btn btn-info mr-2">Update</button>
+        )}
+       
           <button type="reset" className="btn btn-cancel">Cancel</button>
         </div>
         <hr></hr>
-        <TableForm Inputvalue={searchInput} ChangeInput={ChangeInput} data={TblArray} EditData={EditData} />
+        <TableForm Inputvalue={searchInput} ChangeInput={ChangeInput} data={TblArray} EditData={EditData}  EditFlag={SetEditFlag} SetTRIndex={SetTRIndex}/>
       </div>
     </>
   );

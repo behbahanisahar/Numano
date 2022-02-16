@@ -16,10 +16,12 @@ interface Props {
   data: FormItem[];
   EditData: (i: number, data: FormItem[]) => void;
   ChangeInput(value:any,Tbldata:FormItem[]):void;
+  EditFlag: (x: boolean) => void;
+  SetTRIndex: (x: number) => void;
   Inputvalue:any[];
 }
 
-const TableForm = ({ Inputvalue,data, EditData,ChangeInput }: Props): ReactElement => {
+const TableForm = ({ Inputvalue,data, EditData,ChangeInput,EditFlag,SetTRIndex }: Props): ReactElement => {
 
   const RenderMyTable = (): React.ReactNode => {
 
@@ -27,10 +29,16 @@ const TableForm = ({ Inputvalue,data, EditData,ChangeInput }: Props): ReactEleme
       return (
  
     <TableRow key={i}>
-      <TableCell onClick={() => EditData(i,data)}>
+      <TableCell onClick={() =>{
+        EditData(i,data);
+        EditFlag(true);
+        SetTRIndex(i)
+      
+      } 
+        }>
         <div className="symbol">
           <span className="symbol-label">
-            <span><DKSVGIcon iconName="Edit"  /></span>
+            <span><DKSVGIcon iconName="Edit"/></span>
           </span>
         </div>
       </TableCell>

@@ -31,14 +31,7 @@ import FormItem from "./form-item";
                     State:item.State,
                     ZIP:item.ZIP,
                     Cvv:item.Cvv});
-    })
-
-    // for (const [key, value] of Object.entries(NewArray)) {
-  
-    //   console.log(`${key}: ${value}`);
-    //   setFormData({[key]:value})
-    // }
-    
+    })   
   }
 
 
