@@ -1,4 +1,3 @@
-
 import Form from "./features/components/form/Form";
 import Home from "./features/components/home";
 import table from "./features/components/table/table";
