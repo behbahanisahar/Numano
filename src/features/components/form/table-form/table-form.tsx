@@ -7,18 +7,25 @@ import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
+import InputBase from '@mui/material/InputBase';
+import IconButton from '@mui/material/IconButton';
+import SearchIcon from '@mui/icons-material/Search';
+
 
 interface Props {
   data: FormItem[];
-  EditData:(i:number,data:FormItem[])=> void;
+  EditData: (i: number, data: FormItem[]) => void;
+  ChangeInput(value:any,Tbldata:FormItem[]):void;
+  Inputvalue:any[];
 }
 
-const TableForm = ({ data,EditData }: Props): ReactElement => {
+const TableForm = ({ Inputvalue,data, EditData,ChangeInput }: Props): ReactElement => {
 
-const RenderMyTable = (): React.ReactNode => {
-return data.map((item: FormItem,i) => {
-  return (
-    
+  const RenderMyTable = (): React.ReactNode => {
+
+    return data.map((item: FormItem, i) => {
+      return (
+ 
     <TableRow key={i}>
       <TableCell onClick={() => EditData(i,data)}>
         <div className="symbol">
@@ -36,49 +43,58 @@ return data.map((item: FormItem,i) => {
       <TableCell className="text-hover text-dark font-weight-bolder mb-1 font-size-lg">{item.State}</TableCell>
       <TableCell className="text-hover text-dark font-weight-bolder mb-1 font-size-lg">{item.ZIP}</TableCell>
     </TableRow>
-      
-
-  );
-});
-}
-
-const RenderHeaderTable = () => {
-const HeaderTbl=[
-  'Action',
-  'Cardholder Name',
-  'Cardholder Number',
-  'Cvv',
-  'Address1',
-  'Address2',
-  'City',
-  'State',
-  'ZIP'
-]
 
 
-return <TableHead>
-        <TableRow>
-          {HeaderTbl.map((column,id) => (
-            <TableCell key={id} >
-              {column}
-            </TableCell>
-          ))}
-        </TableRow>
-        </TableHead>
+      );
+    });
+  }
+
+  const RenderHeaderTable = () => {
+    const HeaderTbl = [
+      'Action',
+      'Cardholder Name',
+      'Cardholder Number',
+      'Cvv',
+      'Address1',
+      'Address2',
+      'City',
+      'State',
+      'ZIP'
+    ]
 
 
-}
+    return <TableHead>
+      <TableRow>
+        {HeaderTbl.map((column, id) => (
+          <TableCell key={id} >
+            {column}
+          </TableCell>
+        ))}
+      </TableRow>
+    </TableHead>
 
- return (
-   <>
+
+  }
+
+  return (
+    <>
+        <InputBase
+          sx={{ ml: 1, flex: 1 }}
+          placeholder="Search Table"
+          onChange={(e)=>ChangeInput(e.target.value,data)}
+          value={Inputvalue}
+        />
+        <IconButton  aria-label="search">
+          <SearchIcon />
+        </IconButton>
       <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table" className="ltr mt-5">
         {RenderHeaderTable()}
         <TableBody>
-        {RenderMyTable()}
+          {RenderMyTable()}
         </TableBody>
       </Table>
-   </>
- );
+    </>
+  );
 };
 
 export default TableForm;

@@ -9,7 +9,6 @@ import FooterForm from "./Footer-Form/Footer-Form";
 import FormItem from "./form-item";
 
 
-
  const Form = (): ReactElement => {
   const [formdata, setFormData] = useState<FormItem>({ CardholderName: "", CardholderNumber: "",Address1:"",Address2:"",City:"",State:"",ZIP:"",Cvv:""});
   const onChangeFields = (fieldname: string, value: string): void => {
@@ -41,7 +40,7 @@ import FormItem from "./form-item";
     // }
     
   }
-  
+
 
  
  return (
@@ -51,7 +50,7 @@ import FormItem from "./form-item";
             <HeaderForm  SendFilds={onChangeFields} formData={formdata} />
             <ContentForm SendFilds={onChangeFields} formData={formdata} />
             <DeliveryForm />
-            <FooterForm EditData={EditData} resetData={resetData} data={formdata}/>
+            <FooterForm  EditData={EditData} resetData={resetData} data={formdata}/>
         </Grid>
       </Grid>
     
