@@ -33,8 +33,7 @@ const TableForm = ({ Inputvalue,data, EditData,ChangeInput,EditFlag,SetTRIndex }
         <div className="symbol" onClick={() =>{
         EditData(i,data);
         EditFlag(true);
-        SetTRIndex(i)
-      
+        SetTRIndex(i) 
       } 
         }>
           <span className="symbol-label">
