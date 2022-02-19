@@ -1,5 +1,5 @@
 import * as React from "react";
-import { ReactElement } from "react";
+import { ReactElement, useState } from "react";
 import DKSVGIcon from "src/core/components/svg-icon/svg-icon";
 import FormItem from "../form-item";
 import Table from "@mui/material/Table";
@@ -15,16 +15,18 @@ import SearchIcon from '@mui/icons-material/Search';
 interface Props {
   data: FormItem[];
   EditData: (i: number, data: FormItem[]) => void;
-  ChangeInput(value:any,Tbldata:FormItem[]):void;
   EditFlag: (x: boolean) => void;
   SetTRIndex: (x: number) => void;
-  Inputvalue:any[];
+  setTblArray: (x: FormItem[]) => void;
+  
 }
 
-const TableForm = ({ Inputvalue,data, EditData,ChangeInput,EditFlag,SetTRIndex }: Props): ReactElement => {
+const TableForm = ({ data, EditData,EditFlag,SetTRIndex,setTblArray }: Props): ReactElement => {
+  const [NewArray,SetNewArray]=useState<FormItem[]>([]);
+  const [searchInput, setsearchInput] = useState([]);
 
   const RenderMyTable = (): React.ReactNode => {
-
+    
     return data.map((item: FormItem, i) => {
       return (
  
@@ -50,8 +52,6 @@ const TableForm = ({ Inputvalue,data, EditData,ChangeInput,EditFlag,SetTRIndex }
       <TableCell className="text-hover text-dark font-weight-bolder mb-1 font-size-lg">{item.State}</TableCell>
       <TableCell className="text-hover text-dark font-weight-bolder mb-1 font-size-lg">{item.ZIP}</TableCell>
     </TableRow>
-
-
       );
     });
   }
@@ -83,13 +83,34 @@ const TableForm = ({ Inputvalue,data, EditData,ChangeInput,EditFlag,SetTRIndex }
 
   }
 
+  const ChangeInput = (value: any, data: FormItem[]): void => {
+   
+    const keyword = value;
+    const filteredData = data.filter((val) => {
+      return (val.CardholderName.toLocaleLowerCase().includes(keyword.toLocaleLowerCase()))
+    })
+
+    if ((keyword === "") ) {
+      setsearchInput([]);
+      setTblArray(NewArray);
+  
+    }
+    else {
+      if(filteredData.length!=0){
+        SetNewArray(data);
+      }
+      setTblArray(filteredData);
+      setsearchInput(keyword);
+    }
+  }
+
   return (
     <>
         <InputBase
           sx={{ ml: 1, flex: 1 }}
           placeholder="Search Table"
           onChange={(e)=>ChangeInput(e.target.value,data)}
-          value={Inputvalue}
+          value={searchInput}
         />
         <IconButton  aria-label="search">
           <SearchIcon />

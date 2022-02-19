@@ -15,9 +15,9 @@ interface Props {
 const FooterForm = ({ data, resetData, EditData }: Props): ReactElement => {
 
   const [TblArray, setTblArray] = useState<FormItem[]>([]);
-  const [searchInput, setsearchInput] = useState([]);
   const [EditFlag, SetEditFlag] = useState<boolean>(false);
   const [TRIndex, SetTRIndex] = useState<number>(0);
+ 
  
   const Submitdata = () => {
     if (!EditFlag) {
@@ -31,48 +31,21 @@ const FooterForm = ({ data, resetData, EditData }: Props): ReactElement => {
     }
   
   resetData();
+  // SetNewArray(TblArray);
   };
-
-  const ChangeInput = (value: any, Tbldata: FormItem[]): void => {
-
-    const keyword = value;
-
-    const filteredData = Tbldata.filter((val) => {
-
-      return (val.CardholderName.toLocaleLowerCase().includes(keyword.toLocaleLowerCase()))
-    })
-
-    if (keyword === "") {
-      setsearchInput([]);
-      // setTblArray(Tbldata => [...Tbldata, filteredData]);
-      console.log(filteredData);
-      console.log(Tbldata);
-    }
-    else {
-      setTblArray(filteredData);
-      setsearchInput(keyword);
-      console.log(filteredData);
-      console.log(Tbldata);
-
-    }
-  }
+  
+ 
 
 
   return (
     <>
       <div className="card-footer">
         <div className="card-footer-btn">
-        {!EditFlag && (
-            <button type="submit" onClick={Submitdata} className="btn btn-info mr-2">Submit</button>
-        )}
-        {EditFlag && (
-            <button type="reset" onClick={Submitdata} className="btn btn-info mr-2">Update</button>
-        )}
-       
+          <button type="reset" onClick={Submitdata} className="btn btn-info mr-2">{!EditFlag ? 'Submit': 'Update'}</button>
           <button type="reset" className="btn btn-cancel">Cancel</button>
         </div>
         <hr></hr>
-        <TableForm Inputvalue={searchInput} ChangeInput={ChangeInput} data={TblArray} EditData={EditData}  EditFlag={SetEditFlag} SetTRIndex={SetTRIndex}/>
+        <TableForm  data={TblArray} EditData={EditData} setTblArray={setTblArray}  EditFlag={SetEditFlag} SetTRIndex={SetTRIndex}/>
       </div>
     </>
   );
