@@ -22,7 +22,7 @@ interface Props {
 }
 
 const TableForm = ({ data, EditData,EditFlag,SetTRIndex,setTblArray }: Props): ReactElement => {
-  const [NewArray,SetNewArray]=useState<FormItem[]>([]);
+  const [NewArray,SetNewArray]=useState<any[]>([]);
   const [searchInput, setsearchInput] = useState([]);
 
   const RenderMyTable = (): React.ReactNode => {
@@ -86,21 +86,24 @@ const TableForm = ({ data, EditData,EditFlag,SetTRIndex,setTblArray }: Props): R
   const ChangeInput = (value: any, data: FormItem[]): void => {
    
     const keyword = value;
-    const filteredData = data.filter((val) => {
+    const filteredData = data.filter((val,index) => {
       return (val.CardholderName.toLocaleLowerCase().includes(keyword.toLocaleLowerCase()))
     })
+    
+
 
     if ((keyword === "") ) {
       setsearchInput([]);
       setTblArray(NewArray);
-  
+      console.log(NewArray);
     }
     else {
-      if(filteredData.length!=0){
-        SetNewArray(data);
-      }
+      data = data.filter(val => !NewArray.includes(val));
+      SetNewArray(NewArray=>[...NewArray, ...data]);
       setTblArray(filteredData);
       setsearchInput(keyword);
+      console.log(NewArray);
+      
     }
   }
 
