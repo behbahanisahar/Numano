@@ -1,5 +1,5 @@
 {
-  "name": "numano-project",
+  "name": "nak-project",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -23,11 +23,11 @@
     "deploy:production": "run-s build deploy-build-production",
     "deploy:dev1": "env-cmd -f .env.development run-s build deploy-build-dev1",
     "deploy:dev2": "env-cmd -f .env.dev run-s build deploy-build-dev2",
-    "deploy-build": "ts-node --project ./bin/tsconfig.json ./bin/uploadFolderToSP.ts \"./build/**\" \"/Apps/Staging/Cafeteria\" \"staging\"",
-    "deploy-build-dev1": "ts-node --project ./bin/tsconfig.json ./bin/uploadFolderToSP.ts \"./build/**\" \"/Apps/Dev1\" \"staging\"",
-    "deploy-build-dev2": "ts-node --project ./bin/tsconfig.json ./bin/uploadFolderToSP.ts \"./build/**\" \"/Apps/Dev2\" \"staging\"",
-    "deploy-build-production": "ts-node --project ./bin/tsconfig.json ./bin/uploadFolderToSP.ts \"./build/**\" \"/Apps/Numano\" \"production\"",
-    "deploy-api": "ts-node --project ./bin/tsconfig.json ./bin/uploadFolderToSP.ts \"./src/api/**\" \"/Apps/Cafeteria\""
+    "deploy-build": "ts-node --project ./bin/tsconfig.json ./bin/uploadFolderToSP.ts \"./build/**\" \"/Ticketing\" \"staging\"",
+    "deploy-build-dev1": "ts-node --project ./bin/tsconfig.json ./bin/uploadFolderToSP.ts \"./build/**\" \"/Ticketing/Dev1\" \"staging\"",
+    "deploy-build-dev2": "ts-node --project ./bin/tsconfig.json ./bin/uploadFolderToSP.ts \"./build/**\" \"/Ticketing/Dev2\" \"staging\"",
+    "deploy-build-production": "ts-node --project ./bin/tsconfig.json ./bin/uploadFolderToSP.ts \"./build/**\" \"/Ticketing\" \"production\"",
+    "deploy-api": "ts-node --project ./bin/tsconfig.json ./bin/uploadFolderToSP.ts \"./src/api/**\" \"/Ticketing\""
   },
   "browserslist": {
     "production": [
@@ -79,6 +79,7 @@
     "cache": "^2.1.0",
     "chart.js": "^2.9.3",
     "clean": "^4.0.2",
+    "craco": "^0.0.3",
     "craco-babel-loader": "^0.1.4",
     "craco-less": "^1.16.0",
     "debug": "^4.1.1",

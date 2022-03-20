@@ -2,6 +2,7 @@
 
 import SettingItem from "src/entities/setting-item";
 import UserInfo from "src/entities/userinfo";
+import DropDownModel from "src/utilities/drop-down";
 
 export default class MockData {
   public static UserInfo: UserInfo = {
@@ -36,4 +37,30 @@ export default class MockData {
     iconUrl: "https://aura.digikala.com/hris/joy-site/PublishingImages/gifts/gift.gif",
     imageUrl: "https://aura.digikala.com/hris/joy-site/PublishingImages/gifts/gift.png",
   };
+  public static dropDownValues: DropDownModel[] = [
+    {
+      text: "test1",
+      key: "1",
+      Parent:"Ticket Type"
+    
+    },
+    {
+      text: "test2",
+      key: "2",
+      Parent:"Node Type"
+     
+    },
+    {
+      text: "test3",
+      key: "3",
+      Parent:"Vendor"
+     
+    },
+    {
+      text: "test4",
+      key: "4",
+      Parent:"Technology Type"
+     
+    },
+  ];
 }

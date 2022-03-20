@@ -18,6 +18,7 @@ enum SPLists {
   DeathLoan = "0a96b6c8-a67d-4293-8dab-164f6504f619", // hazine marge azizan
   MariiageLoan = "386acefa-7096-4b2e-896f-fb268869bfbd",
   Loan = "75C56FFF-E3EC-4A8A-A498-F5E4F4C4ED69",
+  DropDownValues = "DropDown",
 }
 
 export default SPLists;

@@ -36,7 +36,7 @@ export default class APP extends React.Component<{}> {
             </Router>
           </LocalizeProvider>
         </MuiThemeProvider>
-        <AppContextConsumer>{appContext => <ToastContainer rtl={true} newestOnTop={true} />}</AppContextConsumer>
+        <AppContextConsumer>{appContext => <ToastContainer rtl={false} newestOnTop={true} />}</AppContextConsumer>
       </AppContextProvider>
     );
   }
